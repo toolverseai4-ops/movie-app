@@ -1,4 +1,4 @@
-const apiKey = "b188c6148b0cc3989e1d96a50a2502fc"; // Add your API key
+Abfetch(`/.netlify/functions/movies?search=${searchTerm}`)
 
 document.addEventListener("DOMContentLoaded", () => {
   loadTrending();
@@ -267,4 +267,5 @@ function goHome() {
 
 function toggleTheme() {
   document.body.classList.toggle("light-mode");
+
 }
