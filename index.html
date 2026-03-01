@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo" onclick="goHome()">AnimeExplorer</div>
+
+    <div class="nav-right">
+        
+        <select id="category">
+            <option value="multi">All</option>
+            <option value="movie">Movies</option>
+            <option value="tv">TV Shows</option>
+        </select>
+        <button onclick="toggleTheme()" class="theme-btn">Toggle Theme</button>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Welcome to AnimeExplorer</h1>
+    <p>
+        Discover trending anime, movies, and TV shows.
+        Search your favorite titles and watch official trailers instantly.
+        Powered by TMDB API.
+    </p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search anime or movie...">
+        <button onclick="searchMovie()">Search</button>
+    </div>
+</section>
+
+<h2 id="sectionTitle">Trending Today</h2>
+
+<div id="loader" class="loader"></div>
+<div id="results"></div>
+       
+<section class="about-site">
+  <div class="about-container">
+
+    <div class="about-header">
+      <h2>About This Platform</h2>
+      <div class="gradient-line"></div>
+    </div>
+
+    <p class="about-text">
+      Discover trending movies, explore detailed information, check ratings,
+      watch trailers, and dive into cast insights all in one powerful,
+      beautifully designed movie discovery experience.
+    </p>
+
+    <p class="about-text">
+      Built with performance, responsiveness, and clean UI principles
+      to deliver a seamless browsing experience across all devices.
+    </p>
+    <p> </p>
+
+    <div class="brand-box">
+      <p>Designed & Developed By</p>
+      <h3>Decoder Sid</h3>
+    </div>
+
+  </div>
+</section>     
+<footer class="footer">
+    <p>© 2026 AnimeExplorer | Powered by TMDB API</p>
+</footer>
+
+<!-- Movie Detail Modal -->
+<div id="movieModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <div class="modal-body">
+      <div class="modal-poster">
+        <img id="modalPoster" src="" alt="Poster">
+      </div>
+
+      <div class="modal-details">
+        <h2 id="modalTitle"></h2>
+        <p id="modalOverview"></p>
+        <p><strong>Rating:</strong> <span id="modalRating"></span></p>
+        <p><strong>Release:</strong> <span id="modalRelease"></span></p>
+
+        <button id="trailerBtn">Watch Trailer</button>
+        <div id="modalDetailsExtra"></div>
+
+        <div id="trailerContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="movieModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-body">
+
+      <!-- LEFT SIDE (1 part) -->
+      <div class="modal-left">
+        <img id="modalPoster" />
+        <div class="movie-meta">
+          <p><strong>⭐</strong> <span id="modalRating"></span></p>
+          <p><strong>⏳</strong> <span id="modalRuntime"></span></p>
+          <p><strong>📅</strong> <span id="modalRelease"></span></p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE (3 parts) -->
+      <div class="modal-right">
+        <h1 id="modalTitle"></h1>
+        <h3 id="modalTagline" class="tagline"></h3>
+        <p id="modalGenres"></p>
+        <p id="modalOverview" class="overview"></p>
+
+        <h3>🎭 Cast</h3>
+        <div id="modalCast" class="cast-list"></div>
+
+        <button id="trailerBtn">▶ Watch Trailer</button>
+      </div>
+
+    </div>
+  </div>
+</div>      
+<div id="movieModal" class="modal">
+
+  <div class="modal-content">
+
+    <!-- Close Button -->
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <!-- Backdrop -->
+    <div id="modalBackdrop" class="modal-backdrop"></div>
+
+    <div class="modal-body">
+
+      <!-- LEFT SIDE -->
+      <div class="modal-left">
+        <img id="modalPoster" alt="Movie Poster">
+
+        <div class="movie-meta">
+          <p><strong>⭐ Rating:</strong> <span id="modalRating"></span></p>
+          <p><strong>📅 Release:</strong> <span id="modalRelease"></span></p>
+          <p><strong>⏳ Runtime:</strong> <span id="modalRuntime"></span></p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="modal-right">
+
+        <h1 id="modalTitle"></h1>
+
+        <h3 id="modalTagline" class="tagline"></h3>
+
+        <p id="modalOverview"></p>
+
+        <!-- IMPORTANT: Language + Genres -->
+        <p><strong>Language:</strong> <span id="modalLanguage"></span></p>
+        <p><strong>Genres:</strong> <span id="modalGenres"></span></p>
+
+        <h3>🎭 Cast</h3>
+        <div id="modalCast" class="cast-list"></div>
+
+        <button id="trailerBtn">▶ Watch Trailer</button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+    <script src="script.js"></script>
+    <span id="closeModalBtn" class="close-btn">&times;</span>
+</body>
+</html>
